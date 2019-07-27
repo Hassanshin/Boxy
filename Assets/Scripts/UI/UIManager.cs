@@ -31,6 +31,6 @@ public class UIManager : MonoBehaviour
         i_ElementManager.Ready();
         isPlaying = true;
 
-        humanPlayer.GetComponent<PlayerManager>().countScore();
+        humanPlayer.GetComponent<PlayerManager>().CountScore();
     }
 }

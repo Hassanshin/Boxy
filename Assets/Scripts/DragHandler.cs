@@ -51,8 +51,10 @@ public class DragHandler : MonoBehaviour
             ReturnObjectSwap(out hitInfo);
             getTarget.layer = 9;
 
+            // Done Moving Monsters
+
             PUi.UpdatePlayerUI();
-            PManager.countScore();
+            PManager.CountScore();
 
             isMouseDragging = false;
         }
@@ -76,15 +78,18 @@ public class DragHandler : MonoBehaviour
 
     void swapPosition(Transform a, Transform b)
     {
+        Transform monsterA = a.GetChild(0);
+        Transform monsterB = b.GetChild(0);
 
-        a.GetChild(0).SetParent(b);
-        b.GetChild(0).SetParent(a);
+        monsterA.SetParent(b);
+        monsterB.SetParent(a);
 
-        a.GetChild(0).localPosition = Vector3.zero;
-        b.GetChild(0).localPosition = Vector3.zero;
+        monsterA.SetAsFirstSibling();
+        monsterB.SetAsFirstSibling();
 
+        monsterA.localPosition = Vector3.zero;
+        monsterB.localPosition = Vector3.zero;
 
-        Debug.Log(a + " swap to " + b);
     }
 
     Transform ReturnObjectSwap(out RaycastHit hit)

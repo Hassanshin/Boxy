@@ -6,7 +6,8 @@ using Random = UnityEngine.Random;
 
 public class ElementManager : MonoBehaviour
 {
-    [SerializeField]
+    private const string MONSTER_TAG = "monster";
+
     private List<GameObject> monstersPoolList = new List<GameObject>();
 
     [SerializeField]
@@ -17,12 +18,53 @@ public class ElementManager : MonoBehaviour
 
     [SerializeField]
     private PlayerManager[] players;
+    
+
+    #region Singleton
+
+    public static ElementManager _instance = null;
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    #endregion
 
     private void Start()
-    {
+    { 
+        registerTypeMonsters();
         players = fieldPlayers.GetComponentsInChildren<PlayerManager>();
-        shuffledList = ShuffleList(monstersPoolList);
+        shuffleMonsters();
 
+        
+        
+    }
+
+    private void disableDragHandler()
+    {
+        
+    }
+
+    private void registerTypeMonsters()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if(transform.GetChild(i).tag == MONSTER_TAG)
+                monstersPoolList.Add(transform.GetChild(i).gameObject);
+        }
+
+        players = fieldPlayers.GetComponentsInChildren<PlayerManager>();
+
+    }
+    
+    void shuffleMonsters()
+    {
+        shuffledList = ShuffleList(monstersPoolList);
+    }
+
+    public void Ready()
+    {
         for (int i = 0; i < players.Length; i++)
         {
             RegisterMonstersToPlayer(i);

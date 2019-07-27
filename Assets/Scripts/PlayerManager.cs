@@ -19,7 +19,8 @@ public class PlayerManager : MonoBehaviour
     private int[] eFire = new int[3], eAir = new int[3], eWater = new int[3], eEarth = new int[3];
 
     private int AcePoint = 10;
-    private int Pair3Point = 2; 
+    private int Pair3Point = 2;
+    private int AllElementPoint = 10;
 
     public Canvas cam;
     private PlayerUI PUi;
@@ -53,10 +54,10 @@ public class PlayerManager : MonoBehaviour
 
     public void KillAllMonstersFromField()
     {
-        //for (int i = 0; i < myMonsters.Count; i++)
-        //{
-        //    Destroy(myMonsters[i]);
-        //}
+        for (int i = 0; i < myMonsters.Count; i++)
+        {
+            myMonsters[i].SetActive(false);
+        }
 
         myMonsters.Clear();
     }
@@ -109,41 +110,52 @@ public class PlayerManager : MonoBehaviour
 
                 if(checkAllSameElement(_lane, strongType))
                 {
-                    _resultStrongElement = 10;
+                    _resultStrongElement = 5;
                 }
 
 
             }
-            else
+
+            // 1 lane same element with no Strong type
+            if (checkAllSameElement(_lane, ElementType.fire))
             {
-                if (checkAllSameElement(_lane, ElementType.fire))
-                {
-                    _resultElement = 5;
-                }
-                else if (checkAllSameElement(_lane, ElementType.air))
-                {
-                    _resultElement = 5;
-                }
-                else if (checkAllSameElement(_lane, ElementType.earth))
-                {
-                    _resultElement = 5;
-                }
-                 else if (checkAllSameElement(_lane, ElementType.water))
-                {
-                    _resultElement = 5;
-                }
+                _resultElement = AllElementPoint;
+            }
+            else if (checkAllSameElement(_lane, ElementType.air))
+            {
+                _resultElement = AllElementPoint;
+            }
+            else if (checkAllSameElement(_lane, ElementType.earth))
+            {
+                _resultElement = AllElementPoint;
+            }
+            else if (checkAllSameElement(_lane, ElementType.water))
+            {
+                _resultElement = AllElementPoint;
             }
 
-            // 3 Element pair on Bot and Mid lane
-            if (_laneIndex < 2)
+            //All element
+            if (allElement(_laneIndex))
             {
-                _resultPair = pair3and4(_laneIndex);
+                _resultElement = AllElementPoint;
             }
 
             // Tier
             _resultTier += _monster.m_Tier;
 
 
+            
+
+            //_result = _resultTier + _resultElement + _resultPair + _resultAce;
+
+
+            
+            
+        }
+
+        for (int c = 0; c < _lane.Length; c++)
+        {
+            Element _monster = _lane[c].GetChild(0).GetComponent<Element>();
             // Ace with other Element
             if (_monster.m_Emotion == EmotionType.Ace)
             {
@@ -151,29 +163,50 @@ public class PlayerManager : MonoBehaviour
 
                 if (checkAllSameElement(_lane, AceType))
                 {
-                    _resultAce += AcePoint;
+                    _resultAce = AcePoint;
 
                 }
                 else
                 {
-                    _resultAce -= AcePoint;
+                    _resultAce = -AcePoint/2;
 
                 }
 
+
                 _resultPair = 0;
                 _resultElement = 0;
+
+
             }
+            // No ace no Strong, so using pairing
+            else if (_monster.m_Emotion != EmotionType.Strong)
+            {
+                // 3 Element pair on Bot and Mid lane
+                if (_laneIndex < 2)
+                {
+                    _resultPair = pair3and4(_laneIndex);
 
-            //_result = _resultTier + _resultElement + _resultPair + _resultAce;
-            _result = _resultElement + _resultPair + _resultAce + _resultStrongElement;
-
-            
-          
+                }
+            }
         }
 
-        //Debug.Log("Tier:" + _resultTier + " Element:" + _resultElement + " Pair:" + _resultPair + " Ace:" + _resultAce);
+        _result = _resultElement + _resultPair + _resultAce + _resultStrongElement;
+
+
+        if (_laneIndex == 1)
+            Debug.Log("Tier:" + _resultTier + "  Element:" + _resultElement + "  Pair:" + _resultPair + "  Strong:" + _resultStrongElement + "  Ace:" + _resultAce);
 
         return _result;
+    }
+
+    bool allElement(int _laneIndex)
+    {
+        if (eFire[_laneIndex] > 0 && eAir[_laneIndex] > 0 && eEarth[_laneIndex] > 0 && eWater[_laneIndex] > 0)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     int pair3and4(int _laneIndex)
@@ -184,7 +217,7 @@ public class PlayerManager : MonoBehaviour
         {
             _result = Pair3Point;
         }
-        else if (eFire[_laneIndex] >= 4)
+        else if (eFire[_laneIndex] == 4)
         {
             _result = Pair3Point + 2;
         }
@@ -193,7 +226,7 @@ public class PlayerManager : MonoBehaviour
         {
             _result = Pair3Point;
         }
-        else if (eAir[_laneIndex] >= 4)
+        else if (eAir[_laneIndex] == 4)
         {
             _result = Pair3Point + 2;
         }
@@ -202,7 +235,7 @@ public class PlayerManager : MonoBehaviour
         {
             _result = Pair3Point;
         }
-        else if (eEarth[_laneIndex] >= 4)
+        else if (eEarth[_laneIndex] == 4)
         {
             _result = Pair3Point + 2;
         }
@@ -211,7 +244,7 @@ public class PlayerManager : MonoBehaviour
         {
             _result = Pair3Point;
         }
-        else if (eWater[_laneIndex] >= 4)
+        else if (eWater[_laneIndex] == 4)
         {
             _result = Pair3Point +2;
         }

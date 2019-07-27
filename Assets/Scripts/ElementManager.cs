@@ -59,13 +59,6 @@ public class ElementManager : MonoBehaviour
     private void copyMonsters()
     {
         masterPoolList.AddRange(ReadytoShuffleList);
-
-        //for (int i = 0; i < ReadytoShuffleList.Count; i++)
-        //{
-        //    GameObject copy = Instantiate(ReadytoShuffleList[i]);
-        //    masterPoolList.Add(Instantiate(ReadytoShuffleList[i]));
-            
-        //}
     }
 
     void masterToMonsterPool()
@@ -121,7 +114,6 @@ public class ElementManager : MonoBehaviour
     void registerMonstersToPlayer(int _playerIndex)
     {
         // memberi setiap player sebnayak 13 monster
-        Debug.Log("Register to Player " + shuffledList.Count);
         for (int i = 0; i < 13; i++)
         {
             int randomNum = Random.Range(0, shuffledList.Count);

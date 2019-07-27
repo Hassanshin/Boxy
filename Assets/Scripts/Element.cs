@@ -14,10 +14,16 @@ public class Element : MonoBehaviour
     //[SerializeField]
     public EmotionType m_Emotion;
 
+    [Header("Color")]
     public Color colorFire;
     public Color colorAir;
     public Color colorEarth;
     public Color colorWater;
+
+    [Header("Model3d")]
+    public Mesh[] modelTier;
+
+    public MeshFilter FilterToChange;
 
     public void Start()
     {
@@ -76,6 +82,8 @@ public class Element : MonoBehaviour
     void c_tier()
     {
         float _scale = 1f;
+
+        FilterToChange.mesh = modelTier[m_Tier-1];
 
         switch (m_Tier)
         {

@@ -8,6 +8,9 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private Text[] v_Score;
 
+    [SerializeField]
+    private Text v_TotalScore;
+
     private PlayerManager PManager;
 
     private void Start()
@@ -26,6 +29,9 @@ public class PlayerUI : MonoBehaviour
         {
             v_Score[i].text = PManager.TotalScore[i] + "";
         }
-        
+
+        int AllLaneScore = PManager.TotalScore[0] + PManager.TotalScore[1] + PManager.TotalScore[2];
+
+        v_TotalScore.text = "Total Score = " + AllLaneScore;
     }
 }

@@ -51,6 +51,16 @@ public class PlayerManager : MonoBehaviour
 
     }
 
+    public void KillAllMonstersFromField()
+    {
+        //for (int i = 0; i < myMonsters.Count; i++)
+        //{
+        //    Destroy(myMonsters[i]);
+        //}
+
+        myMonsters.Clear();
+    }
+
     public void CountScore()
     {
         updateEachLane();
@@ -85,6 +95,7 @@ public class PlayerManager : MonoBehaviour
         int _resultTier = 0;
         int _resultPair = 0;
         int _resultAce = 0;
+        int _resultStrongElement = 0;
 
         for (int i = 0; i < _lane.Length; i++)
         {
@@ -98,10 +109,29 @@ public class PlayerManager : MonoBehaviour
 
                 if(checkAllSameElement(_lane, strongType))
                 {
-                    _resultElement += 5;
+                    _resultStrongElement = 10;
                 }
 
-                
+
+            }
+            else
+            {
+                if (checkAllSameElement(_lane, ElementType.fire))
+                {
+                    _resultElement = 5;
+                }
+                else if (checkAllSameElement(_lane, ElementType.air))
+                {
+                    _resultElement = 5;
+                }
+                else if (checkAllSameElement(_lane, ElementType.earth))
+                {
+                    _resultElement = 5;
+                }
+                 else if (checkAllSameElement(_lane, ElementType.water))
+                {
+                    _resultElement = 5;
+                }
             }
 
             // 3 Element pair on Bot and Mid lane
@@ -122,12 +152,12 @@ public class PlayerManager : MonoBehaviour
                 if (checkAllSameElement(_lane, AceType))
                 {
                     _resultAce += AcePoint;
-                    
+
                 }
                 else
                 {
                     _resultAce -= AcePoint;
-                    
+
                 }
 
                 _resultPair = 0;
@@ -135,13 +165,13 @@ public class PlayerManager : MonoBehaviour
             }
 
             //_result = _resultTier + _resultElement + _resultPair + _resultAce;
-            _result =  _resultElement + _resultPair + _resultAce;
+            _result = _resultElement + _resultPair + _resultAce + _resultStrongElement;
 
             
           
         }
 
-        Debug.Log("Tier:" + _resultTier + " Element:" + _resultElement + " Pair:" + _resultPair + " Ace:" + _resultAce);
+        //Debug.Log("Tier:" + _resultTier + " Element:" + _resultElement + " Pair:" + _resultPair + " Ace:" + _resultAce);
 
         return _result;
     }
@@ -154,7 +184,7 @@ public class PlayerManager : MonoBehaviour
         {
             _result = Pair3Point;
         }
-        else if (eFire[_laneIndex] == 4)
+        else if (eFire[_laneIndex] >= 4)
         {
             _result = Pair3Point + 2;
         }
@@ -163,7 +193,7 @@ public class PlayerManager : MonoBehaviour
         {
             _result = Pair3Point;
         }
-        else if (eAir[_laneIndex] == 4)
+        else if (eAir[_laneIndex] >= 4)
         {
             _result = Pair3Point + 2;
         }
@@ -172,7 +202,7 @@ public class PlayerManager : MonoBehaviour
         {
             _result = Pair3Point;
         }
-        else if (eEarth[_laneIndex] == 4)
+        else if (eEarth[_laneIndex] >= 4)
         {
             _result = Pair3Point + 2;
         }
@@ -181,7 +211,7 @@ public class PlayerManager : MonoBehaviour
         {
             _result = Pair3Point;
         }
-        else if (eWater[_laneIndex] == 4)
+        else if (eWater[_laneIndex] >= 4)
         {
             _result = Pair3Point +2;
         }

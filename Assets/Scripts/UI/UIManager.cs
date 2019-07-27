@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
             return;
 
         i_ElementManager.RestartGame();
-        i_ElementManager.Register();
+        
 
         humanPlayer.GetComponent<PlayerManager>().CountScore();
     }

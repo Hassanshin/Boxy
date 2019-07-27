@@ -43,29 +43,36 @@ public class ElementManager : MonoBehaviour
 
     public void RestartGame()
     {
+        shuffledList.Clear();
+        ReadytoShuffleList.Clear();
         masterToMonsterPool();
-        shuffleMonsters();
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].KillAllMonstersFromField();
+        }
+
+
+        Register();
     }
 
     private void copyMonsters()
     {
-        
-        for (int i = 0; i < ReadytoShuffleList.Count; i++)
-        {
-            GameObject copy = Instantiate(ReadytoShuffleList[i]);
-            masterPoolList.Add(Instantiate(ReadytoShuffleList[i]));
+        masterPoolList.AddRange(ReadytoShuffleList);
+
+        //for (int i = 0; i < ReadytoShuffleList.Count; i++)
+        //{
+        //    GameObject copy = Instantiate(ReadytoShuffleList[i]);
+        //    masterPoolList.Add(Instantiate(ReadytoShuffleList[i]));
             
-        }
+        //}
     }
 
     void masterToMonsterPool()
     {
-        Debug.Log("mastertoMonsterPool " + masterPoolList.Count);
-        for (int i = 0; i < masterPoolList.Count; i++)
-        {
-            ReadytoShuffleList.Add(masterPoolList[i]);
-            masterPoolList.RemoveAt(i);
-        }
+        Debug.Log("master to Monster Pool " + masterPoolList.Count);
+        ReadytoShuffleList.AddRange(masterPoolList);
+        shuffledList = ShuffleList(ReadytoShuffleList);
     }
 
     private void registerTypeMonsters()
@@ -82,7 +89,9 @@ public class ElementManager : MonoBehaviour
     
     void shuffleMonsters()
     {
+        Debug.Log("Shuffle monsters " + ReadytoShuffleList.Count);
         shuffledList = ShuffleList(ReadytoShuffleList);
+        
     }
 
     public void Register()
@@ -111,6 +120,8 @@ public class ElementManager : MonoBehaviour
 
     void registerMonstersToPlayer(int _playerIndex)
     {
+        // memberi setiap player sebnayak 13 monster
+        Debug.Log("Register to Player " + shuffledList.Count);
         for (int i = 0; i < 13; i++)
         {
             int randomNum = Random.Range(0, shuffledList.Count);

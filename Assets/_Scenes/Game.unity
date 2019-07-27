@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -203,6 +208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -288,6 +298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -443,6 +458,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -527,6 +547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -712,6 +737,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -797,6 +827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -876,6 +911,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -962,6 +1002,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1046,6 +1091,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -1132,6 +1182,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1217,6 +1272,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1301,6 +1361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -1395,7 +1460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &389037387
 Transform:
   m_ObjectHideFlags: 0
@@ -1421,6 +1486,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -1507,6 +1577,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1586,6 +1661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -1671,6 +1751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -1839,6 +1924,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1923,6 +2013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -2009,6 +2104,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2089,6 +2189,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2168,6 +2273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -2259,6 +2369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2343,6 +2458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -2429,6 +2549,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2513,6 +2638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -2604,6 +2734,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2688,6 +2823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -2774,6 +2914,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2859,6 +3004,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2938,6 +3088,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -3028,6 +3183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -3160,6 +3320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3244,6 +3409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -3334,6 +3504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -3431,6 +3606,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3510,6 +3690,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -3601,6 +3786,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3685,6 +3875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -3771,6 +3966,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3856,6 +4056,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3940,6 +4145,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -4031,6 +4241,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4115,6 +4330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -4206,6 +4426,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4295,6 +4520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -4464,7 +4694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1481050408
 Transform:
   m_ObjectHideFlags: 0
@@ -4620,6 +4850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4704,6 +4939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -4983,6 +5223,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5072,6 +5317,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -5163,6 +5413,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5252,6 +5507,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -5423,6 +5683,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5502,6 +5767,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -5663,6 +5933,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5751,7 +6026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1992905887
 Transform:
   m_ObjectHideFlags: 0
@@ -5823,6 +6098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -5908,6 +6188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -6060,6 +6345,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monsters (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6144,6 +6434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}
@@ -6308,6 +6603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: monsters
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697351251113522607, guid: e4069bef06046774384856cdf4293752,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6697351251113522601, guid: e4069bef06046774384856cdf4293752,
         type: 3}

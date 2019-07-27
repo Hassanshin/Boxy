@@ -8,7 +8,8 @@ public class ElementManager : MonoBehaviour
 {
     private const string MONSTER_TAG = "monster";
 
-    private List<GameObject> monstersPoolList = new List<GameObject>();
+    private List<GameObject> ReadytoShuffleList = new List<GameObject>();
+    private List<GameObject> masterPoolList = new List<GameObject>();
 
     [SerializeField]
     private List<GameObject> shuffledList = new List<GameObject>();
@@ -32,18 +33,39 @@ public class ElementManager : MonoBehaviour
     #endregion
 
     private void Start()
-    { 
-        registerTypeMonsters();
+    {
         players = fieldPlayers.GetComponentsInChildren<PlayerManager>();
+
+        registerTypeMonsters();
         shuffleMonsters();
 
-        
-        
     }
 
-    private void disableDragHandler()
+    public void RestartGame()
+    {
+        masterToMonsterPool();
+        shuffleMonsters();
+    }
+
+    private void copyMonsters()
     {
         
+        for (int i = 0; i < ReadytoShuffleList.Count; i++)
+        {
+            GameObject copy = Instantiate(ReadytoShuffleList[i]);
+            masterPoolList.Add(Instantiate(ReadytoShuffleList[i]));
+            
+        }
+    }
+
+    void masterToMonsterPool()
+    {
+        Debug.Log("mastertoMonsterPool " + masterPoolList.Count);
+        for (int i = 0; i < masterPoolList.Count; i++)
+        {
+            ReadytoShuffleList.Add(masterPoolList[i]);
+            masterPoolList.RemoveAt(i);
+        }
     }
 
     private void registerTypeMonsters()
@@ -51,23 +73,23 @@ public class ElementManager : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             if(transform.GetChild(i).tag == MONSTER_TAG)
-                monstersPoolList.Add(transform.GetChild(i).gameObject);
+                ReadytoShuffleList.Add(transform.GetChild(i).gameObject);
         }
 
         players = fieldPlayers.GetComponentsInChildren<PlayerManager>();
-
+        copyMonsters();
     }
     
     void shuffleMonsters()
     {
-        shuffledList = ShuffleList(monstersPoolList);
+        shuffledList = ShuffleList(ReadytoShuffleList);
     }
 
-    public void Ready()
+    public void Register()
     {
         for (int i = 0; i < players.Length; i++)
         {
-            RegisterMonstersToPlayer(i);
+            registerMonstersToPlayer(i);
         }
     }
 
@@ -87,7 +109,7 @@ public class ElementManager : MonoBehaviour
         return randomList; //return the new random list
     }
 
-    void RegisterMonstersToPlayer(int _playerIndex)
+    void registerMonstersToPlayer(int _playerIndex)
     {
         for (int i = 0; i < 13; i++)
         {

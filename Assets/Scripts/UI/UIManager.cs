@@ -26,10 +26,27 @@ public class UIManager : MonoBehaviour
     public void BtnReady()
     {
         if (isPlaying)
+        {
+            BtnShuffle();
+        }
+        else
+        {
+            
+            i_ElementManager.Register();
+            isPlaying = true;
+
+            humanPlayer.GetComponent<PlayerManager>().CountScore();
+        }
+
+    }
+
+    public void BtnShuffle()
+    {
+        if (!isPlaying)
             return;
 
-        i_ElementManager.Ready();
-        isPlaying = true;
+        i_ElementManager.RestartGame();
+        i_ElementManager.Register();
 
         humanPlayer.GetComponent<PlayerManager>().CountScore();
     }

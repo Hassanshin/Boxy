@@ -13,10 +13,15 @@ public class PlayerManager : MonoBehaviour
     private Transform[] laneBot = new Transform[5];
     private Transform[] laneMid = new Transform[5];
     private Transform[] laneTop = new Transform[3];
+
     private int[] totalScore = new int[3];
+    
+    private int[] eFire = new int[3], eAir = new int[3], eWater = new int[3], eEarth = new int[3];
+
+    private int AcePoint = 10;
+    private int Pair3Point = 2; 
 
     public Canvas cam;
-
     private PlayerUI PUi;
 
     public int[] TotalScore
@@ -39,6 +44,7 @@ public class PlayerManager : MonoBehaviour
         for (int i = 0; i < myMonsters.Count; i++)
         {
             myMonsters[i].transform.SetParent(slots[i]);
+            myMonsters[i].SetActive(true);
             myMonsters[i].transform.SetAsFirstSibling();
             myMonsters[i].transform.localPosition = Vector3.zero;
         }
@@ -48,70 +54,170 @@ public class PlayerManager : MonoBehaviour
     public void CountScore()
     {
         updateEachLane();
-
+        
         counting();
 
         PUi.UpdatePlayerUI();
 
-        Debug.Log("countScore PManager");
+
     }
 
     #region Scoring method
 
     private void counting()
     {
+        elementCounter(laneBot, 0);
+        elementCounter(laneMid, 1);
+        elementCounter(laneTop, 2);
+
         // Counting Score based on Lane
+        totalScore[0] = TotalOn(laneBot, 0);
+        totalScore[1] = TotalOn(laneMid, 1);
+        totalScore[2] = TotalOn(laneTop, 2);
 
-        totalScore[0] = TotalOn(laneBot);
-        totalScore[1] = TotalOn(laneMid);
-        totalScore[2] = TotalOn(laneTop);
-
-        checkElement(laneBot);
-        checkElement(laneMid);
-        checkElement(laneTop);
+        
     }
 
-    private void checkElement(Transform[] _lane)
+    int TotalOn(Transform[] _lane, int _laneIndex)
     {
+        int _result = 0;
+        int _resultElement = 0;
+        int _resultTier = 0;
+        int _resultPair = 0;
+        int _resultAce = 0;
+
         for (int i = 0; i < _lane.Length; i++)
         {
             Element _monster = _lane[i].GetChild(0).GetComponent<Element>();
 
             
+            // 5 Element pair with Strong type
+            if (_monster.m_Emotion == EmotionType.Strong)
+            {
+                ElementType strongType = _monster.m_ElementType;
+
+                if(checkAllSameElement(_lane, strongType))
+                {
+                    _resultElement += 5;
+                }
+
+                
+            }
+
+            // 3 Element pair on Bot and Mid lane
+            if (_laneIndex < 2)
+            {
+                _resultPair = pair3and4(_laneIndex);
+            }
+
+            // Tier
+            _resultTier += _monster.m_Tier;
+
+
+            // Ace with other Element
+            if (_monster.m_Emotion == EmotionType.Ace)
+            {
+                ElementType AceType = _monster.m_ElementType;
+
+                if (checkAllSameElement(_lane, AceType))
+                {
+                    _resultAce += AcePoint;
+                    
+                }
+                else
+                {
+                    _resultAce -= AcePoint;
+                    
+                }
+
+                _resultPair = 0;
+                _resultElement = 0;
+            }
+
+            //_result = _resultTier + _resultElement + _resultPair + _resultAce;
+            _result =  _resultElement + _resultPair + _resultAce;
+
+            
+          
         }
 
-        
+        Debug.Log("Tier:" + _resultTier + " Element:" + _resultElement + " Pair:" + _resultPair + " Ace:" + _resultAce);
+
+        return _result;
     }
 
-    int TotalOn(Transform[] _lane)
+    int pair3and4(int _laneIndex)
     {
         int _result = 0;
-        int _resultElement = 0;
-        int _resultTier = 0;
+
+        if (eFire[_laneIndex] == 3)
+        {
+            _result = Pair3Point;
+        }
+        else if (eFire[_laneIndex] == 4)
+        {
+            _result = Pair3Point + 2;
+        }
+
+        if (eAir[_laneIndex] == 3)
+        {
+            _result = Pair3Point;
+        }
+        else if (eAir[_laneIndex] == 4)
+        {
+            _result = Pair3Point + 2;
+        }
+
+        if (eEarth[_laneIndex] == 3)
+        {
+            _result = Pair3Point;
+        }
+        else if (eEarth[_laneIndex] == 4)
+        {
+            _result = Pair3Point + 2;
+        }
+
+        if (eWater[_laneIndex] == 3)
+        {
+            _result = Pair3Point;
+        }
+        else if (eWater[_laneIndex] == 4)
+        {
+            _result = Pair3Point +2;
+        }
+
+        return _result;
+    }
+
+    void elementCounter(Transform[] _lane, int _laneIndex)
+    {
+        eFire[_laneIndex] = 0;
+        eEarth[_laneIndex] = 0;
+        eAir[_laneIndex] = 0;
+        eWater[_laneIndex] = 0;
 
         for (int i = 0; i < _lane.Length; i++)
         {
             Element _monster = _lane[i].GetChild(0).GetComponent<Element>();
 
-            // Tier
-            _resultTier += _monster.m_Tier;
-
-            // All Element with Strong type
-            if (_monster.m_Emotion == EmotionType.Strong)
+            switch (_monster.m_ElementType)
             {
-                ElementType strongType = _monster.m_ElementType;
-                Debug.Log(strongType);
-
-                if(checkAllSameElement(_lane, strongType))
-                {
-                    _resultElement += 2;
-                }
+                case ElementType.fire:
+                    eFire[_laneIndex]++;
+                    break;
+                case ElementType.water:
+                    eWater[_laneIndex]++;
+                    break;
+                case ElementType.air:
+                    eAir[_laneIndex]++;
+                    break;
+                case ElementType.earth:
+                    eEarth[_laneIndex]++;
+                    break;
+                default:
+                    break;
             }
-
-            _result = _resultElement;
-
         }
-        return _result;
     }
 
     bool checkAllSameElement(Transform[] _lane, ElementType _type)
@@ -125,6 +231,7 @@ public class PlayerManager : MonoBehaviour
                 return false;
             }
         }
+
         return true;
     }
 
@@ -132,6 +239,7 @@ public class PlayerManager : MonoBehaviour
 
     private void updateEachLane()
     {
+        
 
         int a = 0, b = 0, c = 0;
 

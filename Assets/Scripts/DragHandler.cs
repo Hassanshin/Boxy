@@ -81,15 +81,16 @@ public class DragHandler : MonoBehaviour
         Transform monsterA = a.GetChild(0);
         Transform monsterB = b.GetChild(0);
 
-        //monsterA.SetParent(b);
-        //monsterB.SetParent(a);
+        monsterA.SetParent(b);
+        monsterB.SetParent(a);
 
-        //monsterA.SetAsFirstSibling();
-        //monsterB.SetAsFirstSibling();
+        monsterA.SetAsFirstSibling();
+        monsterB.SetAsFirstSibling();
 
-        monsterA.transform.position = a.position;
-        monsterB.transform.position = b.position;
+        monsterA.localPosition = Vector3.zero;
+        monsterB.localPosition = Vector3.zero;
 
+        Debug.Log(a + " swap with " + b);
     }
 
     Transform ReturnObjectSwap(out RaycastHit hit)

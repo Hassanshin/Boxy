@@ -54,10 +54,10 @@ public class PlayerManager : MonoBehaviour
         // Move Monsters to Players Field
         for (int i = 0; i < myMonsters.Count; i++)
         {
-            //myMonsters[i].transform.SetParent(slots[i]);
+            myMonsters[i].transform.SetParent(slots[i]);
             myMonsters[i].SetActive(true);
-            //myMonsters[i].transform.SetAsFirstSibling();
-            myMonsters[i].transform.position = slots[i].position;
+            myMonsters[i].transform.SetAsFirstSibling();
+            myMonsters[i].transform.localPosition = Vector3.zero;
         }
 
     }

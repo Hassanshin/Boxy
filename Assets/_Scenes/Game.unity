@@ -4793,7 +4793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2020042555}
+      - m_Target: {fileID: 1643178641}
         m_MethodName: BtnReady
         m_Mode: 1
         m_Arguments:
@@ -5038,6 +5038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643178640}
   - component: {fileID: 1643178639}
+  - component: {fileID: 1643178641}
   m_Layer: 0
   m_Name: MonstersPool
   m_TagString: Untagged
@@ -5137,6 +5138,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1643178641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643178638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710475b0b63f0fa4d842cdf4c0498b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaying: 0
+  humanPlayer: {fileID: 1036755748}
 --- !u!1 &1705131955
 GameObject:
   m_ObjectHideFlags: 0
@@ -6080,7 +6095,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020042554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 710475b0b63f0fa4d842cdf4c0498b12, type: 3}
   m_Name: 

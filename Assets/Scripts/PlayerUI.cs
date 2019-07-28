@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    [SerializeField]
-    private Text[] v_Score;
+    public Text[] v_Score;
 
-    [SerializeField]
-    private Text v_TotalScore;
+    public Text v_TotalScore;
 
     private PlayerManager PManager;
 
@@ -18,17 +16,17 @@ public class PlayerUI : MonoBehaviour
         PManager = GetComponent<PlayerManager>();
     }
 
-    public void UpdatePlayerUI()
-    {
-        scoreUpdate();
-    }
+    //public void UpdatePlayerUI()
+    //{
+    //    scoreUpdate();
+    //}
 
     private void scoreUpdate()
     {
-        for (int i = 0; i < PManager.TotalScore.Length; i++)
-        {
-            v_Score[i].text = PManager.TotalScore[i] + "";
-        }
+        //for (int i = 0; i < PManager.counter.Length; i++)
+        //{
+        //    v_Score[i].text = PManager.counter[i]. + "";
+        //}
 
         int AllLaneScore = PManager.TotalScore[0] + PManager.TotalScore[1] + PManager.TotalScore[2];
 

@@ -82,7 +82,6 @@ public class ElementManager : MonoBehaviour
     
     void shuffleMonsters()
     {
-        Debug.Log("Shuffle monsters " + ReadytoShuffleList.Count);
         shuffledList = ShuffleList(ReadytoShuffleList);
         
     }

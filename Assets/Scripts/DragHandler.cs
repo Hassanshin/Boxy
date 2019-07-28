@@ -53,7 +53,7 @@ public class DragHandler : MonoBehaviour
 
             // Done Moving Monsters
 
-            PUi.UpdatePlayerUI();
+            //PUi.UpdatePlayerUI();
             //PManager.CountScore();
 
             isMouseDragging = false;
@@ -90,7 +90,7 @@ public class DragHandler : MonoBehaviour
         monsterA.localPosition = Vector3.zero;
         monsterB.localPosition = Vector3.zero;
 
-        Debug.Log(a + " swap with " + b);
+        //Debug.Log(a + " swap with " + b);
     }
 
     Transform ReturnObjectSwap(out RaycastHit hit)

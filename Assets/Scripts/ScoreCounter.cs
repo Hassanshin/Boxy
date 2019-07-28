@@ -110,20 +110,25 @@ public class ScoreCounter : MonoBehaviour
         //All element and No Ace and no strong
         if (allElement() && eAce <= 0 && eStrong <= 0)
         {
-            _resultElement = 12;
+            _resultElement = 10;
             _result = _resultElement;                           // ScoreCombo
 
             UpdateUI(_result, "All Element");
         }
-        else if(eFire > 2 || eEarth > 2 || eWater > 2 || eAir > 2)
+        else if(eFire == 3 || eEarth == 3 || eWater == 3 || eAir == 3)
         {
             //3 and  4 Pair
-            UpdateUI(pair3and4(), "Squad");
+            UpdateUI(pair3and4(), "Tri");                     // ScoreCombo
+        }
+        else if (eFire == 4 || eEarth == 4 || eWater == 4 || eAir == 4)
+        {
+            //3 and  4 Pair
+            UpdateUI(pair3and4(), "Quadra");                     // ScoreCombo
         }
         else
         {
             // Use Highest Tier if All combo fails
-            UpdateUI(HighestTier, "Highest Tier");
+            UpdateUI(HighestTier - 1, "Highest Tier");          // ScoreCombo - 1
         }
 
         // == EMOTION COMBO
@@ -143,7 +148,7 @@ public class ScoreCounter : MonoBehaviour
                     }
                     else
                     {
-                        _resultAceElement = -5 + countSameElement(AceType, EmotionType.Strong);
+                        _resultAceElement = -2 + countSameElement(AceType, EmotionType.Strong);
                     }
 
                     _result = _resultAceElement;    // ScoreCombo + Strong emot that same element
@@ -160,7 +165,7 @@ public class ScoreCounter : MonoBehaviour
                 checkAllSameElement(ElementType.earth) ||
                 checkAllSameElement(ElementType.water))
             {
-                _AllElementPoint = 5;
+                _AllElementPoint = 7;
                 _result = _AllElementPoint;        // ScoreCombo
 
                 UpdateUI(_result, "Perfect Element");
@@ -179,8 +184,8 @@ public class ScoreCounter : MonoBehaviour
 
                     if (checkAllSameElement(strongType))
                     {
-                        _resultStrongElement = 5;
-                        _result = _resultStrongElement + _AllElementPoint + eStrong;   // ScoreCombo + 1 lane Combo + Every Strong types
+                        _resultStrongElement = 7;
+                        _result = _resultStrongElement + eStrong;   // ScoreCombo + 1 lane Combo + Every Strong types
 
                         UpdateUI(_result, "Strong " + strongType + " Element");
                     }
@@ -195,7 +200,7 @@ public class ScoreCounter : MonoBehaviour
     int pair3and4()
     {
         int _result = 0;
-        int point = 3;
+        int point = 4;
 
         if (eFire == 3)
         {

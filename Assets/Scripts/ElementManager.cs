@@ -49,7 +49,7 @@ public class ElementManager : MonoBehaviour
 
         for (int i = 0; i < players.Length; i++)
         {
-            players[i].KillAllMonstersFromField();
+            players[i].RemoveMonstersFromField();
         }
 
 
@@ -63,7 +63,7 @@ public class ElementManager : MonoBehaviour
 
     void masterToMonsterPool()
     {
-        Debug.Log("master to Monster Pool " + masterPoolList.Count);
+
         ReadytoShuffleList.AddRange(masterPoolList);
         shuffledList = ShuffleList(ReadytoShuffleList);
     }
@@ -82,7 +82,6 @@ public class ElementManager : MonoBehaviour
     
     void shuffleMonsters()
     {
-        Debug.Log("Shuffle monsters " + ReadytoShuffleList.Count);
         shuffledList = ShuffleList(ReadytoShuffleList);
         
     }

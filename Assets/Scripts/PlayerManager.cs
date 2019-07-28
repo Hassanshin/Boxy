@@ -13,28 +13,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private ScoreCounter[] counter;
 
-    private Transform[] laneBot = new Transform[5];
-    private Transform[] laneMid = new Transform[5];
-    private Transform[] laneTop = new Transform[3];
-
-    private int[] totalScore = new int[3];
-    
-    private int[] eFire = new int[3], eAir = new int[3], eWater = new int[3], eEarth = new int[3];
-
-    private int AcePoint = 10;
-    private int Pair3Point = 2;
-    private int AllElementPoint = 10;
-
     public Canvas cam;
     private PlayerUI PUi;
 
-    public int[] TotalScore
-    {
-        get
-        {
-            return totalScore;
-        }
-    }
+    public int[] totalScore = new int[3];
 
     private void Start()
     {
@@ -74,56 +56,26 @@ public class PlayerManager : MonoBehaviour
 
     public void CountScore()
     {
+        // Count the Score 
         CountCounterList();
-
-
     }
 
     private void CountCounterList()
     {
-        foreach (ScoreCounter _counter in counter)
+        for (int i = 0; i < counter.Length; i++)
         {
-            _counter.Counting();
+            counter[i].Counting();
+            
         }
+        
     }
 
-    private void updateEachLane()
+    public void UpdateTotalFrom3Lane()
     {
-        int a = 0, b = 0, c = 0;
-
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < counter.Length; i++)
         {
-            Element _monster = slots[i].GetChild(0).GetComponent<Element>();
-
-            if (i < 5)
-            {
-                
-                laneBot[a] = slots[i];
-                a++;
-                //totalScore[0] += _monster.m_Tier;
-            }
-            else if (i < 10)
-            {
-                
-                laneMid[b] = slots[i];
-                b++;
-                //totalScore[1] += _monster.m_Tier;
-            }
-            else
-            {
-                
-                laneTop[c] = slots[i];
-                c++;
-                //totalScore[2] += _monster.m_Tier;
-            }
-
-            
-            
+            totalScore[i] = counter[i].totalScore;
         }
-
-
     }
-
-    
     
 }

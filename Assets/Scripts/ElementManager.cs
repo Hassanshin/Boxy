@@ -53,8 +53,62 @@ public class ElementManager : MonoBehaviour
         }
 
 
-        Register();
+        register();
     }
+
+    public void CountingScore()
+    {
+        StartCoroutine(counting());
+    }
+
+    IEnumerator counting()
+    {
+        int[] maxScore = new int[players.Length];
+
+        // Ready Pressed
+
+        Debug.Log("Start Counting");
+
+        yield return new WaitForSeconds(0.5f);
+
+        // Updating Last Set
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].UpdateTotalFrom3Lane();
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        // Finding Maximum Each Lane
+        for (int i = 0; i < 3; i++)
+        {
+            List<int> scoring = new List<int>();
+
+            scoring.Add(players[0].totalScore[i]);
+            scoring.Add(players[1].totalScore[i]);
+            scoring.Add(players[2].totalScore[i]);
+            scoring.Add(players[3].totalScore[i]);
+
+            scoring.Sort();
+            scoring.Reverse();
+
+            yield return new WaitForSeconds(1f);
+
+            // Finding Winner Each Lane
+            
+
+            Debug.Log(" List:" + scoring[0]);
+            scoring.Clear();
+        }
+        
+        
+
+
+        Debug.Log("Done Counting " );
+    }
+
+   
 
     private void copyMonsters()
     {
@@ -86,7 +140,7 @@ public class ElementManager : MonoBehaviour
         
     }
 
-    public void Register()
+    private void register()
     {
         for (int i = 0; i < players.Length; i++)
         {

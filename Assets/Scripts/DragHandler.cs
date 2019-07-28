@@ -54,7 +54,7 @@ public class DragHandler : MonoBehaviour
             // Done Moving Monsters
 
             PUi.UpdatePlayerUI();
-            PManager.CountScore();
+            //PManager.CountScore();
 
             isMouseDragging = false;
         }
@@ -81,14 +81,14 @@ public class DragHandler : MonoBehaviour
         Transform monsterA = a.GetChild(0);
         Transform monsterB = b.GetChild(0);
 
-        monsterA.SetParent(b);
-        monsterB.SetParent(a);
+        //monsterA.SetParent(b);
+        //monsterB.SetParent(a);
 
-        monsterA.SetAsFirstSibling();
-        monsterB.SetAsFirstSibling();
+        //monsterA.SetAsFirstSibling();
+        //monsterB.SetAsFirstSibling();
 
-        monsterA.localPosition = Vector3.zero;
-        monsterB.localPosition = Vector3.zero;
+        monsterA.transform.position = a.position;
+        monsterB.transform.position = b.position;
 
     }
 

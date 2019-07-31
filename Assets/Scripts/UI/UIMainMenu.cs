@@ -17,6 +17,12 @@ public class UIMainMenu : MonoBehaviour
             chosen.transform.position = charPosition[PlayerPrefs.GetInt("char")].position;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+    }
+
     public void BtnChangeChar(int _index)
     {
         PlayerPrefs.SetInt("char", _index);
@@ -27,5 +33,10 @@ public class UIMainMenu : MonoBehaviour
     public void BtnChangeScene(int _index)
     {
         SceneManager.LoadScene(_index);
+    }
+
+    public void BtnQuit()
+    {
+        Application.Quit();
     }
 }

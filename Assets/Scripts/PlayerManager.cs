@@ -108,6 +108,7 @@ public class PlayerManager : MonoBehaviour
             charIndex = PlayerPrefs.GetInt("char");
 
             changeCharacter(charIndex);
+            money = PlayerPrefs.GetInt("money");
             v_Money.text = PlayerPrefs.GetInt("money") + "";
         }
     }

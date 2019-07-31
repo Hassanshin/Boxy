@@ -59,7 +59,8 @@ public class ScoreCounter : MonoBehaviour
     [SerializeField]
     private Text v_Name;
 
-    
+    [SerializeField]
+    private GameObject v_isCounting;
 
     public void ClearCount()
     {
@@ -82,6 +83,12 @@ public class ScoreCounter : MonoBehaviour
 
         
     }
+
+    public void isCountingThisLane(bool _state)
+    {
+        v_isCounting.SetActive(_state);
+    }
+    
 
     public void Counting()
     {

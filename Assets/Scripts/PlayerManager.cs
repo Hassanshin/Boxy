@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -18,11 +19,21 @@ public class PlayerManager : MonoBehaviour
 
     public int[] totalScore = new int[3];
 
+    public int[] myRank_Line = new int[3];
+
+    [SerializeField]
+    private Text bottomText;
+
     private void Start()
     {
         cam.worldCamera = Camera.main;
 
         PUi = GetComponent<PlayerUI>();
+    }
+
+    public void ChangeBottomText(string _text)
+    {
+        bottomText.text = _text;
     }
 
     public void MoveMonstersToField()
@@ -42,6 +53,26 @@ public class PlayerManager : MonoBehaviour
             myMonsters[i].transform.localPosition = Vector3.zero;
         }
 
+    }
+
+    public void isFocusedOn(int _index)
+    {
+        for (int i = 0; i < counter.Length; i++)
+        {
+            counter[i].isCountingThisLane(false);
+        }
+
+        counter[_index].isCountingThisLane(true);
+    }
+
+    public void clearFocus()
+    {
+        for (int i = 0; i < counter.Length; i++)
+        {
+            counter[i].isCountingThisLane(false);
+        }
+
+        ChangeBottomText("done");
     }
 
     public void RemoveMonstersFromField()

@@ -19,11 +19,22 @@ public class ElementManager : MonoBehaviour
 
     [SerializeField]
     private PlayerManager[] players;
-    
+
+    bool isCounting = false;
+
+    public bool IsCounting
+    {
+        get
+        {
+            return isCounting;
+        }
+    }
 
     #region Singleton
 
     public static ElementManager _instance = null;
+
+    
 
     private void Awake()
     {
@@ -66,7 +77,7 @@ public class ElementManager : MonoBehaviour
         int[] maxScore = new int[players.Length];
 
         // Ready Pressed
-
+        isCounting = true;
         Debug.Log("Start Counting");
 
         yield return new WaitForSeconds(0.5f);
@@ -76,6 +87,7 @@ public class ElementManager : MonoBehaviour
         for (int i = 0; i < players.Length; i++)
         {
             players[i].UpdateTotalFrom3Lane();
+            
         }
 
         yield return new WaitForSeconds(2f);
@@ -85,30 +97,63 @@ public class ElementManager : MonoBehaviour
         {
             List<int> scoring = new List<int>();
 
-            scoring.Add(players[0].totalScore[i]);
-            scoring.Add(players[1].totalScore[i]);
-            scoring.Add(players[2].totalScore[i]);
-            scoring.Add(players[3].totalScore[i]);
+            // Adding Player (0, 1, 2, 3) with score each lane (0, 1, 2)
+            for (int a = 0; a < players.Length; a++)
+            {
+                if (!scoring.Contains(players[a].totalScore[i]))
+                    scoring.Add(players[a].totalScore[i]);
+            }
 
+            // Sorting by score
             scoring.Sort();
             scoring.Reverse();
 
             yield return new WaitForSeconds(1f);
 
             // Finding Winner Each Lane
-            
 
-            Debug.Log(" List:" + scoring[0]);
+            for (int a = 0; a < players.Length; a++)
+            {
+                players[a].isFocusedOn(i);
+                players[a].myRank_Line[i] = rankPlayer(scoring, players[a].totalScore[i]);
+
+                players[a].ChangeBottomText("Lane " + (i + 1) + ": rank " + (players[a].myRank_Line[i] + 1));
+            }
+
+            yield return new WaitForSeconds(3f);
+
             scoring.Clear();
         }
-        
-        
 
-
-        Debug.Log("Done Counting " );
+        doneCounting();
     }
 
-   
+    private void doneCounting()
+    {
+        isCounting = false;
+        Debug.Log("Done Counting ");
+
+        for (int a = 0; a < players.Length; a++)
+        {
+            players[a].clearFocus();
+        }
+    }
+
+    int rankPlayer(List<int> scoringList, int myScore)
+    {
+        int result = 9;
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            if(myScore == scoringList[i])
+            {
+                result = i;
+                break;
+            }
+        }
+
+        return result;
+    }
 
     private void copyMonsters()
     {

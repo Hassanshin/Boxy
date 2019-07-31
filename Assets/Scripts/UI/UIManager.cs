@@ -66,9 +66,11 @@ public class UIManager : MonoBehaviour
 
     void resetAFterCounting()
     {
-        //i_ElementManager.RestartGame();
-        //humanPlayer.GetComponent<PlayerManager>().CountScore();
-        
+        if (i_ElementManager.IsCounting)
+        {
+            Debug.Log("still in counting");
+            return;
+        }
 
         gameStateNow = gameState.idle;
 

@@ -26,8 +26,10 @@ public class UIManager : MonoBehaviour
         humanPlayer.GetComponent<DragHandler>().enabled = true;
         mainButton.GetComponentInChildren<Text>().text = "Start";
 
-        
+        humanPlayer.GetComponent<PlayerManager>().ChangeEmoticonPlayer(0);
     }
+
+    #region on Game
 
     public void BtnReady()
     {
@@ -72,6 +74,8 @@ public class UIManager : MonoBehaviour
             return;
         }
 
+        i_ElementManager.ClearField();
+
         gameStateNow = gameState.idle;
 
         mainButton.GetComponentInChildren<Text>().text = "Start";
@@ -85,6 +89,14 @@ public class UIManager : MonoBehaviour
         gameStateNow = gameState.counting;
 
         mainButton.GetComponentInChildren<Text>().text = "Restart";
+        humanPlayer.GetComponent<PlayerManager>().ChangeEmoticonPlayer(1);
+    }
+
+    #endregion
+
+    public void BtnChangeChar(int _index)
+    {
+        i_ElementManager.charIndex = _index;
     }
 }
 

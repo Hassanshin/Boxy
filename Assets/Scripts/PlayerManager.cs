@@ -24,6 +24,21 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private Text bottomText;
 
+    [SerializeField]
+    private Image v_EmotToChange;
+
+    [SerializeField]
+    private Sprite[] v_EmotPlayer;
+
+    /*
+     * 0 idle
+     * 1 counting
+     * 2 win
+     * 3 lose
+     * 
+     * 
+     */ 
+
     private void Start()
     {
         cam.worldCamera = Camera.main;
@@ -31,9 +46,24 @@ public class PlayerManager : MonoBehaviour
         PUi = GetComponent<PlayerUI>();
     }
 
+    public void ChangeEmoticonPlayer(int _index)
+    {
+        v_EmotToChange.sprite = v_EmotPlayer[_index];
+    }
+
     public void ChangeBottomText(string _text)
     {
         bottomText.text = _text;
+    }
+
+
+
+    public void ClearMonster()
+    {
+        for (int i = 0; i < myMonsters.Count; i++)
+        {
+            myMonsters[i].SetActive(false);
+        }
     }
 
     public void MoveMonstersToField()

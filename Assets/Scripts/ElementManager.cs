@@ -20,7 +20,11 @@ public class ElementManager : MonoBehaviour
     [SerializeField]
     private PlayerManager[] players;
 
+    public int charIndex;
+
     bool isCounting = false;
+
+
 
     public bool IsCounting
     {
@@ -50,12 +54,23 @@ public class ElementManager : MonoBehaviour
         registerTypeMonsters();
         shuffleMonsters();
 
+
+    }
+
+    public void ClearField()
+    {
+        shuffledList.Clear();
+        ReadytoShuffleList.Clear();
+
+        for (int _playerIndex = 0; _playerIndex < players.Length; _playerIndex++)
+        {
+            players[_playerIndex].ClearMonster();
+        }
     }
 
     public void RestartGame()
     {
-        shuffledList.Clear();
-        ReadytoShuffleList.Clear();
+        
         masterToMonsterPool();
 
         for (int i = 0; i < players.Length; i++)
@@ -114,13 +129,28 @@ public class ElementManager : MonoBehaviour
 
             for (int a = 0; a < players.Length; a++)
             {
+                players[a].ChangeBottomText("");
                 players[a].isFocusedOn(i);
-                players[a].myRank_Line[i] = rankPlayer(scoring, players[a].totalScore[i]);
+                players[a].GetComponent<PlayerManager>().ChangeEmoticonPlayer(1);
 
+                yield return new WaitForSeconds(3f);
+
+                players[a].myRank_Line[i] = rankPlayer(scoring, players[a].totalScore[i]);
                 players[a].ChangeBottomText("Lane " + (i + 1) + ": rank " + (players[a].myRank_Line[i] + 1));
+
+                if(players[a].myRank_Line[i] == 0)
+                {
+                    // If win, rank 1
+                    players[a].GetComponent<PlayerManager>().ChangeEmoticonPlayer(2);
+                }
+                else
+                {
+                    // If lose
+                    players[a].GetComponent<PlayerManager>().ChangeEmoticonPlayer(3);
+                }
             }
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
 
             scoring.Clear();
         }
@@ -136,6 +166,7 @@ public class ElementManager : MonoBehaviour
         for (int a = 0; a < players.Length; a++)
         {
             players[a].clearFocus();
+            players[a].GetComponent<PlayerManager>().ChangeEmoticonPlayer(0);
         }
     }
 

@@ -53,7 +53,7 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator hideChanges()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         v_MoneyChange.text = "";
     }
 

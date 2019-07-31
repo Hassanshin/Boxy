@@ -93,7 +93,7 @@ public class ElementManager : MonoBehaviour
 
         // Ready Pressed
         isCounting = true;
-        Debug.Log("Start Counting");
+        //Debug.Log("Start Counting");
 
         yield return new WaitForSeconds(0.5f);
 
@@ -123,7 +123,7 @@ public class ElementManager : MonoBehaviour
             scoring.Sort();
             scoring.Reverse();
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(4f);
 
             // Finding Winner Each Lane
 
@@ -135,24 +135,23 @@ public class ElementManager : MonoBehaviour
                 _player.isFocusedOn(i);
                 _player.ChangeEmoticonPlayer(1);
 
-                yield return new WaitForSeconds(2f);
-
                 _player.myRank_Line[i] = rankPlayer(scoring, _player.totalScore[i]);
                 _player.ChangeBottomText("Lane " + (i + 1) + ": rank " + (_player.myRank_Line[i] + 1));
 
+                // Adding money to Players
                 switch (_player.myRank_Line[i])
                 {
                     case 0:
                         _player.Money += 25;
                         break;
                     case 1:
-                        _player.Money += 10;
+                        _player.Money += 0;
                         break;
                     case 2:
-                        _player.Money += -5;
+                        _player.Money += -10;
                         break;
                     case 3:
-                        _player.Money += -10;
+                        _player.Money += -25;
                         break;
                     default:
                         break;
@@ -173,7 +172,7 @@ public class ElementManager : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
 
             scoring.Clear();
         }
@@ -184,7 +183,7 @@ public class ElementManager : MonoBehaviour
     private void doneCounting()
     {
         isCounting = false;
-        Debug.Log("Done Counting ");
+        //Debug.Log("Done Counting ");
 
         for (int a = 0; a < players.Length; a++)
         {

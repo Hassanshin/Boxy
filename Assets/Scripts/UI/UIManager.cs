@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class UIManager : MonoBehaviour
@@ -94,10 +95,7 @@ public class UIManager : MonoBehaviour
 
     #endregion
 
-    public void BtnChangeChar(int _index)
-    {
-        i_ElementManager.charIndex = _index;
-    }
+    
 }
 
 public enum gameState

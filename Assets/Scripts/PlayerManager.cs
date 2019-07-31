@@ -19,10 +19,60 @@ public class PlayerManager : MonoBehaviour
 
     public int[] totalScore = new int[3];
 
+    private int money;
+
+    public int Money
+    {
+        get
+        {
+            return money;
+        }
+
+        set
+        {
+            int DefMoney = money;
+            int MoneyChange = value - DefMoney;
+
+            money = value;
+
+            v_Money.text = money + "";
+
+            if (MoneyChange < 0)
+                v_MoneyChange.text = MoneyChange + "";
+            else
+                v_MoneyChange.text = "+" + MoneyChange + "";
+
+            StartCoroutine( hideChanges() );
+
+            if (HumanControl)
+            {
+                PlayerPrefs.SetInt("money", money);
+            }
+        }
+    }
+
+    IEnumerator hideChanges()
+    {
+        yield return new WaitForSeconds(1f);
+        v_MoneyChange.text = "";
+    }
+
     public int[] myRank_Line = new int[3];
 
     [SerializeField]
-    private Text bottomText;
+    private Text v_Money;
+
+    [SerializeField]
+    private Text v_MoneyChange;
+
+    [SerializeField]
+    private Text v_BottomText;
+
+    [SerializeField]
+    private Image v_CharToChange;
+
+    [SerializeField]
+    private Color[] c_ColorChar;
 
     [SerializeField]
     private Image v_EmotToChange;
@@ -37,13 +87,29 @@ public class PlayerManager : MonoBehaviour
      * 3 lose
      * 
      * 
-     */ 
+     */
+
+    private int charIndex;
+
+    public bool HumanControl;
+
+    
 
     private void Start()
     {
         cam.worldCamera = Camera.main;
 
         PUi = GetComponent<PlayerUI>();
+
+        
+
+        if (HumanControl)
+        {
+            charIndex = PlayerPrefs.GetInt("char");
+
+            changeCharacter(charIndex);
+            v_Money.text = PlayerPrefs.GetInt("money") + "";
+        }
     }
 
     public void ChangeEmoticonPlayer(int _index)
@@ -53,7 +119,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ChangeBottomText(string _text)
     {
-        bottomText.text = _text;
+        v_BottomText.text = _text;
     }
 
 
@@ -102,7 +168,7 @@ public class PlayerManager : MonoBehaviour
             counter[i].isCountingThisLane(false);
         }
 
-        ChangeBottomText("done");
+        
     }
 
     public void RemoveMonstersFromField()
@@ -115,10 +181,20 @@ public class PlayerManager : MonoBehaviour
         myMonsters.Clear();
     }
 
+    private void changeCharacter(int _index)
+    {
+        charIndex = _index;
+
+        v_CharToChange.color = c_ColorChar[_index];
+
+    }
+
     public void CountScore()
     {
         // Count the Score 
         CountCounterList();
+
+        
     }
 
     private void CountCounterList()

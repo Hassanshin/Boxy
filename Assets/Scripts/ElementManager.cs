@@ -20,7 +20,7 @@ public class ElementManager : MonoBehaviour
     [SerializeField]
     private PlayerManager[] players;
 
-    public int charIndex;
+    
 
     bool isCounting = false;
 
@@ -129,24 +129,47 @@ public class ElementManager : MonoBehaviour
 
             for (int a = 0; a < players.Length; a++)
             {
-                players[a].ChangeBottomText("");
-                players[a].isFocusedOn(i);
-                players[a].GetComponent<PlayerManager>().ChangeEmoticonPlayer(1);
+                PlayerManager _player = players[a];
 
-                yield return new WaitForSeconds(3f);
+                _player.ChangeBottomText("");
+                _player.isFocusedOn(i);
+                _player.ChangeEmoticonPlayer(1);
 
-                players[a].myRank_Line[i] = rankPlayer(scoring, players[a].totalScore[i]);
-                players[a].ChangeBottomText("Lane " + (i + 1) + ": rank " + (players[a].myRank_Line[i] + 1));
+                yield return new WaitForSeconds(2f);
 
-                if(players[a].myRank_Line[i] == 0)
+                _player.myRank_Line[i] = rankPlayer(scoring, _player.totalScore[i]);
+                _player.ChangeBottomText("Lane " + (i + 1) + ": rank " + (_player.myRank_Line[i] + 1));
+
+                switch (_player.myRank_Line[i])
+                {
+                    case 0:
+                        _player.Money += 25;
+                        break;
+                    case 1:
+                        _player.Money += 10;
+                        break;
+                    case 2:
+                        _player.Money += -5;
+                        break;
+                    case 3:
+                        _player.Money += -10;
+                        break;
+                    default:
+                        break;
+                }
+
+                // Changing sprites
+                if(_player.myRank_Line[i] == 0)
                 {
                     // If win, rank 1
-                    players[a].GetComponent<PlayerManager>().ChangeEmoticonPlayer(2);
+                    _player.ChangeEmoticonPlayer(2);
+
+                    
                 }
                 else
                 {
                     // If lose
-                    players[a].GetComponent<PlayerManager>().ChangeEmoticonPlayer(3);
+                    _player.ChangeEmoticonPlayer(3);
                 }
             }
 
@@ -166,6 +189,7 @@ public class ElementManager : MonoBehaviour
         for (int a = 0; a < players.Length; a++)
         {
             players[a].clearFocus();
+            players[a].ChangeBottomText("");
             players[a].GetComponent<PlayerManager>().ChangeEmoticonPlayer(0);
         }
     }
